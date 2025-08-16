@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manglam Stone Company | Premium Natural Stones</title>
+  <meta name="description" content="Manglam Stone Company — Premium sandstone, granite, and marble supplier for global projects." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg: #f9f6f1;
+      --primary: #8b6b4c;
+      --secondary: #d4b483;
+      --dark: #3a2e27;
+      --light: #fff;
+      --radius: 14px;
+      --shadow: 0 5px 20px rgba(0,0,0,0.15);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; background: var(--bg); color: var(--dark); }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; border-radius: var(--radius); }
+    .container { width: min(1100px, 90%); margin: auto; }
+
+    header {
+      background: var(--light);
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 0; z-index: 50;
+    }
+
+    .nav {
+      display: flex; justify-content: space-between; align-items: center; padding: 14px 0;
+    }
+
+    .logo { font-size: 1.4rem; font-weight: 800; color: var(--primary); }
+
+    .nav-links {
+      display: flex; gap: 20px;
+    }
+
+    .nav-links a {
+      font-weight: 500;
+      padding: 6px 10px;
+      border-radius: var(--radius);
+    }
+
+    .nav-links a:hover {
+      background: var(--secondary);
+      color: var(--light);
+      transition: 0.3s;
+    }
+
+    .menu-btn {
+      display: none;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 60px 0;
+      gap: 30px;
+    }
+
+    .hero-text h1 {
+      font-size: 2.5rem;
+      color: var(--primary);
+    }
+
+    .hero-text p {
+      margin: 14px 0;
+      color: #555;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      border-radius: var(--radius);
+      font-weight: 600;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+    }
+
+    .btn.primary { background: var(--primary); color: var(--light); }
+    .btn.secondary { background: var(--secondary); color: var(--light); }
+
+    .hero-img img {
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    section { padding: 50px 0; }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-bottom: 14px;
+    }
+
+    .section-desc {
+      text-align: center;
+      color: #777;
+      max-width: 600px;
+      margin: auto;
+      margin-bottom: 40px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .service {
+      background: var(--light);
+      padding: 20px;
+      border-radius: var(--radius);
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .service img {
+      height: 150px;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .project {
+      background: var(--light);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .project img {
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .project .content {
+      padding: 14px;
+    }
+
+    .tags {
+      margin-top: 8px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      background: var(--secondary);
+      color: var(--light);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+    }
+
+    /* Updated Contact Section */
+    .contact-section {
+      background-color: #f3eee6;
+      padding: 60px 0;
+      border-radius: var(--radius);
+    }
+
+    .contact-info {
+      margin-bottom: 40px;
+      text-align: center;
+      line-height: 2;
+      font-size: 1rem;
+    }
+
+    .contact-info i {
+      color: var(--primary);
+      margin-right: 6px;
+    }
+
+    .contact-info a {
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    .contact-form {
+      background: var(--light);
+      padding: 30px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      max-width: 500px;
+      margin: auto;
+    }
+
+    .contact-form form {
+      display: grid;
+      gap: 16px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      border: 1px solid #ccc;
+      padding: 12px;
+      border-radius: var(--radius);
+      font-family: inherit;
+    }
+
+    .contact-form textarea {
+      min-height: 120px;
+    }
+
+    footer {
+      background: var(--dark);
+      color: var(--light);
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    @media (max-width: 820px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background: var(--light);
+        padding: 14px;
+        position: absolute;
+        right: 5%;
+        top: 60px;
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav">
+      <div class="logo">MANGLAM STONE COMPANY</div>
+      <nav>
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        <div id="navLinks" class="nav-links">
+          <a href="#about">About</a>
+          <a href="#services">Products</a>
+          <a href="#projects">Portfolio</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero container">
+    <div class="hero-text">
+      <h1>Premium Natural Stones</h1>
+      <p>Supplying high-quality sandstone, granite, and marble worldwide with unmatched craftsmanship and service.</p>
+      <a href="#contact" class="btn primary">Get a Quote</a>
+      <a href="#" class="btn secondary">Download Brochure</a>
+    </div>
+    <div class="hero-img">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Stone Work">
+    </div>
+  </section>
+
+  <section id="about">
+    <h2 class="section-title">About Us</h2>
+    <p class="section-desc">Manglam Stone Company is a trusted name in natural stone supply for construction, landscaping, and interior design.</p>
+  </section>
+
+  <section id="services">
+    <h2 class="section-title">Our Products</h2>
+    <div class="container services-grid">
+      <div class="service">
+        <img src="https://images.unsplash.com/photo-1549887534-4c1c86a590b3" alt="Sandstone">
+        <h3>Sandstone</h3>
+        <p>Durable and aesthetic sandstone for architecture and landscaping.</p>
+      </div>
+      <div class="service">
+        <img src="https://images.unsplash.com/photo-1616627562773-473b1d85737d" alt="Granite">
+        <h3>Granite</h3>
+        <p>Premium granite for flooring, countertops, and cladding.</p>
+      </div>
+      <div class="service">
+        <img src="https://images.unsplash.com/photo-1590490360180-3b5f4f92d2c0" alt="Marble">
+        <h3>Marble</h3>
+        <p>Luxurious marble with custom finishes for interiors.</p>
+      </div>
+      <div class="service">
+        <img src="https://images.unsplash.com/photo-1585779034823-6a3f80b3d31a" alt="Custom Stone">
+        <h3>Custom Orders</h3>
+        <p>Made-to-order stone products to match your project needs.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2 class="section-title">Portfolio</h2>
+    <div class="container projects">
+      <div class="project">
+        <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90" alt="Villa Stone Work">
+        <div class="content">
+          <h3>Luxury Villa Cladding</h3>
+          <p>High-end sandstone cladding for a premium villa.</p>
+          <div class="tags"><span class="tag">Sandstone</span><span class="tag">Exterior</span></div>
+        </div>
+      </div>
+      <div class="project">
+        <img src="https://images.unsplash.com/photo-1501045661006-fcebe0257c3f" alt="Hotel Marble">
+        <div class="content">
+          <h3>Hotel Lobby Flooring</h3>
+          <p>Marble flooring installation for a 5-star hotel.</p>
+          <div class="tags"><span class="tag">Marble</span><span class="tag">Interior</span></div>
+        </div>
+      </div>
+      <div class="project">
+        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511" alt="Granite Pathway">
+        <div class="content">
+          <h3>Urban Landscape</h3>
+          <p>Granite pathways and benches for a public park.</p>
+          <div class="tags"><span class="tag">Granite</span><span class="tag">Landscape</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <h2 class="section-title">Get in Touch</h2>
+    <p class="section-desc">Reach out via WhatsApp or Email. We'd love to hear about your project.</p>
+
+    <!-- <div class="container contact-info">
+      <p><i class="fas fa-phone-alt"></i> <strong>Phone (WhatsApp):</strong><br>
+        <a href="https://wa.me/919521512173" target="_blank">9521512173 (Himanshu Goyal)</a> |
+        <a href="https://wa.me/919300473543" target="_blank">9300473543</a> |
+        <a href="https://wa.me/917014162435" target="_blank">7014162435 (Vishnu Goyal)</a>
+      </p>
+      <p><i class="fas fa-envelope"></i> <strong>Email:</strong><br>
+        <a href="mailto:manglamstones@yahoo.co.in">manglamstones@yahoo.co.in</a> |
+        <a href="mailto:goyalhimanshu044@gmail.com">goyalhimanshu044@gmail.com</a>
+      </p>
+      <p><i class="fab fa-instagram"></i> <strong>Instagram:</strong><br>
+        <a href="https://instagram.com/YOUR_INSTAGRAM_USERNAME" target="_blank">https://www.instagram.com/mangalam_stones</a>
+      </p>
+    </div> -->
+    <div class="container contact-info">
+  <p>
+    <!-- Phone -->
+    <i class="fas fa-phone-alt" style="color: #007bff;"></i> 
+    <strong>Phone:</strong><br>
+    <a href="tel:+919521512173">9521512173 (Himanshu Goyal)</a> |
+    <a href="tel:+919300473543">9300473543</a>
+  </p>
+
+  <p>
+    <!-- WhatsApp -->
+    <i class="fab fa-whatsapp" style="color: #25D366;"></i> 
+    <strong>WhatsApp:</strong><br>
+    <a href="https://wa.me/919521512173" target="_blank">9521512173 (Himanshu Goyal)</a> |
+    <a href="https://wa.me/917014162435" target="_blank">7014162435 (Vishnu Goyal)</a>
+  </p>
+
+  <p>
+    <!-- Email -->
+    <i class="fas fa-envelope" style="color: #D44638;"></i> 
+    <strong>Email:</strong><br>
+    <a href="mailto:manglamstones@yahoo.co.in">manglamstones@yahoo.co.in</a> |
+    <a href="mailto:goyalhimanshu044@gmail.com">goyalhimanshu044@gmail.com</a>
+  </p>
+
+  <p>
+    <!-- Instagram -->
+    <i class="fab fa-instagram" style="color: #E4405F;"></i> 
+    <strong>Instagram:</strong><br>
+    <a href="https://www.instagram.com/mangalam_stones" target="_blank">https://www.instagram.com/mangalam_stones</a>
+  </p>
+</div>
+
+
+    <div class="contact-form container">
+      <form id="contactForm">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <input type="text" id="project" placeholder="Company / Project Name" required>
+        <textarea id="message" placeholder="Your Requirements" required></textarea>
+        <button type="submit" class="btn primary">Send Inquiry</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    © <span id="year"></span> Manglam Stone Company. All rights reserved.
+  </footer>
+
+  <script>
+    function toggleMenu(){
+      document.getElementById('navLinks').classList.toggle('show');
+    }
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      let name = document.getElementById('name').value.trim();
+      let email = document.getElementById('email').value.trim();
+      let project = document.getElementById('project').value.trim();
+      let message = document.getElementById('message').value.trim();
+
+      let fullMessage = `Name: ${name}%0AEmail: ${email}%0AProject: ${project}%0ARequirements: ${message}`;
+      let choice = confirm("Click OK to send via WhatsApp, Cancel to send via Email.");
+      if(choice){
+        window.open(`https://wa.me/919521512173?text=${fullMessage}`, '_blank');
+      } else {
+        window.location.href = `mailto:manglamstones@yahoo.co.in?subject=Inquiry from Website&body=${fullMessage}`;
+      }
+    });
+  </script>
+</body>
+</html>
